@@ -1,0 +1,22 @@
+<h1>Movies List</h1>
+<div>
+<ul>
+  <% @bookmarks.each do |bookmark|%>
+   <li>
+   <%= bookmark.movie.title %>
+   <p>
+    <img src="<%= bookmark.movie.poster_url%>" alt="poster" width=200>
+   </p>
+   <p>
+     <%= link_to "Delete", bookmark_path(bookmark),
+  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<% end %>
+   </p>
+    </li>
+</ul>
+</div>
+
+<%= link_to "Create a bookmark", new_list_bookmark_path(list_id: @list.id)%>
+<p>
+<%= link_to "Back to homepage", lists_path%>
+</p>

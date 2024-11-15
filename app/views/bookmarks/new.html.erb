@@ -1,0 +1,11 @@
+
+<div>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit  %>
+<% end %>
+</div>
+<div>
+ <%link_to "back to the list", root_path %>
+</div>

@@ -61,10 +61,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_15_112407) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "overview"
+    t.string "poster_url"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "poster_url"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

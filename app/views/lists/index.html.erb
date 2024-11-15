@@ -2,9 +2,13 @@
 <div>
 <ol>
   <% @lists.each do |list|%>
+  <p>
+  <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill if list.photo.present? %>
+  </p>
    <li> <%= link_to list.name, list_path(list) %>
    <%= link_to "Delete", list_path(list),
   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
     </li>
 <% end %>
 </ol>
